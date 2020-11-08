@@ -1,0 +1,30 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title padding-horizontal>
+      Home
+    </ion-title>
+
+    <ion-button slot="end" (click)="logout()" fill="clear">
+      <ion-icon slot="icon-only" name="exit" color="success"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="all-side-shadow" margin-vertical>
+    <ion-item class="ion-activated" (click)="goToApproveActivity()">
+      <ion-label><img style="width: 100px; height: 100px" src="assets/icon/shovel2.png" /></ion-label>
+      <ion-label class="menu-button" >Field Activity</ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card class="all-side-shadow" margin-vertical>
+    <ion-item class="ion-activated" (click)="goToReport()">
+      <ion-label><img style="width: 100px; height: 100px" src="assets/icon/palm-leaf2.png" /></ion-label>
+      <ion-label class="menu-button">Progress Report</ion-label>
+    </ion-item>
+  </ion-card>
+
+
+</ion-content>

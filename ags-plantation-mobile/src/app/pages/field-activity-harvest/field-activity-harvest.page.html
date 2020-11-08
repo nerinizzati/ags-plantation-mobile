@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>New Field Activity</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Activity : </ion-label>
+      <!--<ion-input [(ngModel)]="record['activity_id']" type="text">Harvest FFB</ion-input>-->
+      <ion-label>Harvest FFB</ion-label>
+
+      <!--<ion-select  [(ngModel)]="record['activity_id']" placeholder="Choose Activity">
+        <ion-select-option *ngFor="let activity of activities | async" value="{{activity.activity_id}}">{{activity.activity_name}}</ion-select-option>
+      </ion-select>      -->
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Block : </ion-label>
+      <ion-label>{{record['block_name']}}</ion-label>
+      <!--<ion-input [(ngModel)]="record['block_id']" type="text">ABC</ion-input>-->
+
+      <!--<ion-select *ngIf ="!scanOptionSelected" [(ngModel)]="record['block_id']"  placeholder="Choose Block">
+        <ion-select-option *ngFor="let block of arealStatements" value="{{block.block_id}}">{{block.block_name}}</ion-select-option>
+      </ion-select>
+      <ion-button (click)="scanCode()" slot="end" fill="clear" color="dark">
+        <ion-icon name="qr-code-outline"></ion-icon>
+      </ion-button>
+      <div *ngIf="scanOptionSelected">  
+        <ion-select  [(ngModel)]="record['block_id']"  placeholder="Choose Block">
+        <ion-select-option *ngFor="let block of arealStatements" value="{{block.block_id}}">{{block.block_name}}</ion-select-option>
+      </ion-select></div>-->
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Area : </ion-label>
+      <ion-input [(ngModel)]="record['area']"  type="number" placeholder="area" ></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Worker : </ion-label>
+      <ion-select *ngIf ="!scanWorkerSelected" [(ngModel)]="record['worker_id']" placeholder="Choose Worker" interface="action-sheet"> 
+        <ion-select-option *ngFor="let worker of workers | async" value="{{worker.worker_id}}">{{worker.worker_name}}</ion-select-option>
+      </ion-select>
+      <ion-button (click)="scanWorker()" slot="end" fill="clear" color="dark">
+        <ion-icon name="qr-code-outline"></ion-icon>
+      </ion-button>
+      <div *ngIf="scanWorkerSelected">  
+        <ion-select  [(ngModel)]="record['worker_id']"  placeholder="Choose Worker" interface="action-sheet">
+          <ion-select-option *ngFor="let worker of workers | async" value="{{worker.worker_id}}">{{worker.worker_name}}</ion-select-option>
+      </ion-select></div>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Man Hour : </ion-label>
+      <ion-input  [(ngModel)]="record['man_hour']" placeholder="Man Hour"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Machine : </ion-label>
+      <ion-select *ngIf="!scanAssetSelected" [(ngModel)]="record['asset_id']" type="text" placeholder="Choose Machine" interface="action-sheet">
+        <ion-select-option *ngFor="let asset of assets | async" value="{{asset.asset_id}}">{{asset.asset_name}}</ion-select-option>
+      </ion-select>
+      <ion-button (click)="scanAsset()" slot="end" fill="clear" color="dark">
+        <ion-icon name="qr-code-outline"></ion-icon>
+      </ion-button>
+      <div *ngIf="scanAssetSelected">  
+        <ion-select  [(ngModel)]="record['asset_id']"  placeholder="Choose Machine" interface="action-sheet">
+          <ion-select-option *ngFor="let asset of assets | async" value="{{asset.asset_id}}">{{asset.asset_name}}</ion-select-option>
+      </ion-select></div>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Machine Hour : </ion-label>
+      <ion-input  [(ngModel)]="record['machine_hour']" type="number" placeholder="Machine Hour"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Material : </ion-label>
+      <ion-select  *ngIf="!scanItemSelected" [(ngModel)]="record['item_id']" placeholder="Choose Material" interface="action-sheet">
+        <ion-select-option *ngFor="let item of items | async" value="{{item.item_id}}">{{item.item_name}}</ion-select-option>
+      </ion-select>
+      <ion-button (click)="scanItem()" slot="end" fill="clear" color="dark">
+        <ion-icon name="qr-code-outline"></ion-icon>
+      </ion-button>
+      <div *ngIf="scanItemSelected">  
+        <ion-select  [(ngModel)]="record['item_id']"  placeholder="Choose Material" interface="action-sheet">
+          <ion-select-option *ngFor="let item of items | async" value="{{item.item_id}}">{{item.item_name}}</ion-select-option>
+      </ion-select></div>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Quantity : </ion-label>
+      <ion-input  [(ngModel)]="record['quantity']" type="number" placeholder="Quantity"></ion-input>
+    </ion-item>
+
+    <div class='buttonSubmit'>
+    <ion-button expand="block" class="btn-primary" (click)="submit()" [disabled]="disabledButton">
+      <span>Submit</span>
+    </ion-button></div>
+  </ion-list>
+</ion-content>

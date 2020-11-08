@@ -1,0 +1,76 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf = "fieldActivities">Record : {{fieldActivities.created_at}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf = "fieldActivities">
+  <ion-grid>
+    <ion-item >
+      <ion-col><ion-label>Record ID :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.record_id}}</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+    <ion-col><ion-label>Activity ID :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.activity_id}}</ion-label></ion-col>
+      </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Activity Name :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.activity_name}}</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Block Name :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.block_name}}</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Area :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.area}} Ha</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Worker ID :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.worker_id}}</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Worker name :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.worker_name}}</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Man hour :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.man_hour}} hour</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Machine ID :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.asset_id}}</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Machine Name :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.asset_name}}</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Machine Hour :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.machine_hour}} hour</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Material ID :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.item_id}}</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Material Name :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.item_name}}</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Material Quantity :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.quantity}}</ion-label></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-col><ion-label>Record Status :</ion-label></ion-col>
+      <ion-col><ion-label>{{fieldActivities.status}}</ion-label></ion-col>
+    </ion-item>
+  </ion-grid>
+  
+
+</ion-content>

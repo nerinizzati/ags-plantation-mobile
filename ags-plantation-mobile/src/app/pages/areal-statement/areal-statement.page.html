@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Areal Statement</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let block of arealStatements" class="list list-inset" lines="none">
+    <ion-item (click)="goToAreaDetail(block.block_id)">
+      <ion-label><b>Block :</b> {{block.block_name}}</ion-label>
+        <img style="width: 30px; height: 30px"  src="assets/icon/next-arrow.png" />
+    </ion-item>
+</ion-list>
+</ion-content>

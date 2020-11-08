@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Block : {{arealStatements.block_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div #map class="map"></div>
+ <br>
+  <ion-label>Harvest Readiness Color Indicator</ion-label>
+  <ion-list>
+    <ion-item>
+      <img src="assets/icon/green-dots.png" />
+      <ion-label> Ready For Harvest, Age > 3 Years</ion-label>
+    </ion-item>
+    <ion-item>
+      <img src="assets/icon/yellow-dots.png" />
+      <ion-label> Age < 3 Years</ion-label>
+    </ion-item>
+    <ion-item>
+      <img src="assets/icon/red-dots.png" />
+      <ion-label> Not ready for Harvest, Age < 1.5 Years</ion-label>
+    </ion-item>
+    <ion-item></ion-item>
+
+  </ion-list>
+  
+
+</ion-content>

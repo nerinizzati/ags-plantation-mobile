@@ -1,0 +1,39 @@
+ion-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    //font-family: Century Gothic, sans-serif;
+}
+
+/*.content-center {
+    margin: 0;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }*/
+
+  ion-item{
+      padding: 15px;
+      padding-bottom: 0;
+  }
+
+ .buttonSubmit{
+      margin: 70px;
+      margin-top: 25px;
+  }
+
+  .alert-tappable.alert-radio {
+    height: auto;
+    contain: content;
+}
+
+.alert-radio-label.sc-ion-alert-md,
+.alert-radio-label.sc-ion-alert-ios {
+    white-space: normal;
+}
+
+
+

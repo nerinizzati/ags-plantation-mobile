@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Approve Pending Activity</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div *ngFor="let record of fieldActivities|filterBy:['status']:'Pending'">
+    <ion-list class="list list-inset" lines="none"> 
+      <ion-item >
+        <ion-label><b>Record :</b> {{record.created_at}}</ion-label>
+          <img style="width: 30px; height: 30px"  src="assets/icon/next-arrow.png" (click)="goToApprovalDetail(record.record_id)"/>
+      </ion-item>
+  </ion-list></div>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Field Activity History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let record of fieldActivities|filterBy:['status']:['Approved','Rejected']" class="list list-inset" lines="none">
+      <ion-item *ngIf="record.status!='Pending'">
+        <ion-label><b>Record :</b> {{record.created_at}}</ion-label>
+          <img style="width: 30px; height: 30px"  src="assets/icon/next-arrow.png" (click)="goToHistoryDetail(record.record_id)"/>
+      </ion-item>
+  </ion-list>
+</ion-content>

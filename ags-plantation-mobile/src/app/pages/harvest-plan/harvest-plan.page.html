@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Harvesting Plan</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let harvest of arealStatements|orderBy:'-age'">   
+    <ion-item>
+      <ion-label>Block : {{harvest.block_name}}</ion-label>
+    </ion-item>
+
+  
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="5">
+          Age (Days)
+        </ion-col>
+        <ion-col >
+          {{harvest.age}} 
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="changeNum(harvest.age)<1095">
+        <ion-col size="5">
+          Expected Harvest 
+        </ion-col>
+        <ion-col >
+          {{1095-changeNum(harvest.age)}} Days Left
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    <ion-item *ngIf="changeNum(harvest.age)>=1095">
+      <ion-button  fill="outline" slot="start" color="success" (click)="newHarvest(harvest.block_id)">Harvest Now!</ion-button>
+      <ion-button  fill="outline" color="success" (click)="scheduleNotification(5000)">Remind Me Later</ion-button>
+    </ion-item>
+  </ion-card>
+  </ion-content>
+

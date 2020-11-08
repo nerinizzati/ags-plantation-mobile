@@ -1,0 +1,7 @@
+{
+  "name": "ags-plantation-mobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

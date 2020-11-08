@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Field Activity Progress Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-select [(ngModel)]="activity_id" placeholder="Choose Activity" interface="popover" >
+      <ion-select-option *ngFor="let activity of activities | async" value="{{activity.activity_id}}">{{activity.activity_name}}</ion-select-option>
+    </ion-select>
+    <ion-button slot="end" expand="full" (click)="getData()">Search</ion-button>
+  </ion-item>
+
+  <canvas #lineCanvas></canvas>
+      
+    <!--<canvas baseChart [datasets]="ChartData" [labels]="chartLabels" [chartType]="chartType"></canvas>-->
+   
+   <!--<div *ngFor="let activity of activities|filterBy:['activity_id']:activity_id">-->
+    <div *ngFor="let record of fieldActivities; let i=index">
+   
+    <ion-card *ngIf="i<1">
+       <ion-item >
+       <ion-label>Activity : {{record.activity_name}} </ion-label>
+     </ion-item>
+ 
+     <ion-card-content>
+       <ion-row>
+         <ion-col size="5">
+           Total Block 
+         </ion-col>
+         <ion-col >
+           {{totalBlock}}
+         </ion-col>
+       </ion-row>
+       <ion-row >
+         <ion-col size="5">
+           Total Area 
+         </ion-col>
+         <ion-col >
+           {{totalArea}} Ha
+         </ion-col>
+       </ion-row>
+     </ion-card-content>
+   </ion-card>
+ </div>
+ 
+ <div *ngFor="let record of fieldActivities|filterBy:['activity_id']:activity_id">
+   
+   <ion-card >
+ 
+   <ion-card-content >
+     <ion-row>
+       <ion-col size="5">
+         Block Name :  
+       </ion-col>
+       <ion-col >
+         {{record.block_name}}
+       </ion-col>
+     </ion-row>
+     <ion-row >
+       <ion-col size="5">
+         area 
+       </ion-col>
+       <ion-col >
+         {{record.area}} Ha
+       </ion-col>
+     </ion-row>
+     <ion-row >
+       <ion-col size="5">
+         created at
+       </ion-col>
+       <ion-col >
+         {{record.created_at}} 
+       </ion-col>
+     </ion-row>
+   </ion-card-content>
+ </ion-card>
+ </div>
+
+
+ </ion-content>
